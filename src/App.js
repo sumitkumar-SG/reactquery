@@ -8,6 +8,7 @@ import SuperHeroes from './components/SuperHeroes';
 import RQSuperHeroes from './components/RQSuperHeroes';
 import RQSuperHeroesFetch from './hooks/useFetchList';
 import { RQSuperHero } from './components/RQSuperHero';
+import DynamicParallelQuery from './components/DynamicParallelQuery';
 
 function App() {
   const queryClient = new QueryClient();
@@ -16,6 +17,7 @@ function App() {
     <Router>
       <Header />
       <Routes>
+        <Route path="/dynamic-query" element={<DynamicParallelQuery heroIds ={[1,3]} />} />
         <Route path="/rq-super-hero/:heroId" element={<RQSuperHero />} />
         <Route path="/" element={<Home />} />
         <Route path="/super-heroes" element={<SuperHeroes />} />
